@@ -27,13 +27,20 @@ public class PersonagensAdapter extends ArrayAdapter<Personagem> {
 
         View v = convertView;
         if(v == null){
-            v = LayoutInflater.from(getContext()).inflate(R.layout.fragment_personagem, parent, false);
+            v = LayoutInflater.from(getContext()).inflate(R.layout.personagens, parent, false);
         }
 
         Personagem personagem = getItem(position);
         TextView txtNomePersonagem = v.findViewById(R.id.txtNomePersonagem);
+        txtNomePersonagem.setText(personagem.getNome());
 
-        txtNomePersonagem.setText(personagem.getNome_personagem());
         return v;
     }
+
+
+
+
+
+
+
 }

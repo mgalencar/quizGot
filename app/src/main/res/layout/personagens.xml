@@ -25,13 +25,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            >
+            android:layout_marginTop="5dp">
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nome do Personagem"
                 android:textSize="20dp"
                 android:id="@+id/txtNomePersonagem"
                 android:textColor="@color/white"/>

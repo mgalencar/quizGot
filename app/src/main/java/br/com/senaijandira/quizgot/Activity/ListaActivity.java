@@ -5,21 +5,12 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-
-import java.util.List;
 
 import br.com.senaijandira.quizgot.Fragments.FragmentsCasas;
 import br.com.senaijandira.quizgot.Fragments.FragmentsPersonagens;
 import br.com.senaijandira.quizgot.R;
 import br.com.senaijandira.quizgot.adapter.PersonagensAdapter;
-import br.com.senaijandira.quizgot.model.Personagem;
-import br.com.senaijandira.quizgot.service.PersonagemService;
-import br.com.senaijandira.quizgot.service.ServiceFactory;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class ListaActivity extends AppCompatActivity {
 
@@ -27,15 +18,14 @@ public class ListaActivity extends AppCompatActivity {
     TabLayout tab_menu;
     PersonagensAdapter personagemAdapter;
 
-    PersonagemService service;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
 
-        carregarPersonagem();
+        fm = getSupportFragmentManager();
+        personagemAdapter = new PersonagensAdapter(this);
 
         tab_menu = findViewById(R.id.tab_menu);
         tab_menu.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -53,32 +43,6 @@ public class ListaActivity extends AppCompatActivity {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {}
         });
-        fm = getSupportFragmentManager();
-
-    }
-
-    public void carregarPersonagem(){
-
-        PersonagemService service = ServiceFactory.create();
-
-        Call<List<Personagem>> call = service.obterPersonagem();
-
-        call.enqueue(new Callback<List<Personagem>>() {
-            @Override
-            public void onResponse(Call<List<Personagem>> call, Response<List<Personagem>> response) {
-                List<Personagem> personagens = response.body();
-
-                for(Personagem a : personagens){
-                    Log.d("BATATA", a.getNome_personagem());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Personagem>> call, Throwable t) {
-                Log.d("onResponse: ", "DEU ERRRRRRRRRRRRRRRRRRRRROOOOOOOOOOOOOOOOOOOOOO");
-            }
-        });
-
 
     }
 
@@ -93,5 +57,14 @@ public class ListaActivity extends AppCompatActivity {
         ft.replace(R.id.frame_layout, new FragmentsCasas());
         ft.commit();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+    }
+
+
 
 }
