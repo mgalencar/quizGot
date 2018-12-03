@@ -3,7 +3,7 @@ package br.com.senaijandira.quizgot.model;
 public class Personagem {
 
     private int id_personagem;
-    private String nome;
+    private String nome_personagem;
     private String genero;
     private String titulo;
     private String casa;
@@ -18,12 +18,12 @@ public class Personagem {
         this.id_personagem = id_personagens;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNome_personagem() {
+        return nome_personagem;
     }
 
     public void setNome_personagem(String nome_personagem) {
-        this.nome = nome_personagem;
+        this.nome_personagem = nome_personagem;
     }
     public String getGenero() {
         return genero;

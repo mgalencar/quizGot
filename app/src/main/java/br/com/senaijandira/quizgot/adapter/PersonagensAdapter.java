@@ -32,7 +32,7 @@ public class PersonagensAdapter extends ArrayAdapter<Personagem> {
 
         Personagem personagem = getItem(position);
         TextView txtNomePersonagem = v.findViewById(R.id.txtNomePersonagem);
-        txtNomePersonagem.setText(personagem.getNome());
+        txtNomePersonagem.setText(personagem.getNome_personagem());
 
         return v;
     }

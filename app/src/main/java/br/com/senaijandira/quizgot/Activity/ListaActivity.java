@@ -32,10 +32,10 @@ public class ListaActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if(tab.getPosition() == 0){
-                    openFragment1(null);
+                    AbrirListaPersonagens( null);
                 }
                 else if(tab.getPosition() == 1){
-                    openFragment2(null);
+                    AbrirListaCasas(null);
                 }
             }
             @Override
@@ -43,28 +43,19 @@ public class ListaActivity extends AppCompatActivity {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {}
         });
-
+        AbrirListaPersonagens(null);
     }
 
-    public void openFragment1(View view){
+    public void AbrirListaPersonagens(View view){
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.frame_layout, new FragmentsPersonagens());
         ft.commit();
     }
-    public void openFragment2(View view){
+    public void AbrirListaCasas(View view){
         FragmentTransaction ft = fm.beginTransaction();
 
         ft.replace(R.id.frame_layout, new FragmentsCasas());
         ft.commit();
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-
-    }
-
-
 
 }

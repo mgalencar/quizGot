@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,19 +14,18 @@ import java.util.List;
 import br.com.senaijandira.quizgot.R;
 import br.com.senaijandira.quizgot.adapter.PersonagensAdapter;
 import br.com.senaijandira.quizgot.model.Personagem;
-import br.com.senaijandira.quizgot.service.PersonagemService;
+import br.com.senaijandira.quizgot.presenter.ListaPresenter;
 import br.com.senaijandira.quizgot.service.ServiceFactory;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import br.com.senaijandira.quizgot.view.ListaView;
 
 
-public class FragmentsPersonagens extends Fragment{
+public class FragmentsPersonagens extends Fragment implements ListaView{
 
     PersonagensAdapter personagemAdapter;
 
     ListView lstpersonagens;
 
+    ListaPresenter listaPresenter;
     public FragmentsPersonagens(){
 
 
@@ -49,41 +47,24 @@ public class FragmentsPersonagens extends Fragment{
 
         lstpersonagens.setAdapter(personagemAdapter);
 
+        //Configurando o presenter
+        listaPresenter = new ListaPresenter(this, ServiceFactory.create());
+
         return v;
     }
 
-    public void carregarPersonagem(){
 
-        PersonagemService service = ServiceFactory.create();
-
-        Call<List<Personagem>> call = service.obterPersonagem();
-
-        call.enqueue(new Callback<List<Personagem>>() {
-            @Override
-            public void onResponse(Call<List<Personagem>> call, Response<List<Personagem>> response) {
-                List<Personagem> personagens = response.body();
-
-                for(Personagem a : personagens){
-                    Log.d("AQUIIIIIIIIIIIIII", a.getNome());
-                }
-                preencherLista(personagens);
-            }
-
-            @Override
-            public void onFailure(Call<List<Personagem>> call, Throwable t) {
-                Log.d("ERRO ", "DEU ERRO");
-            }
-        });
-    }
 
     @Override
     public void onResume() {
         super.onResume();
-        carregarPersonagem();
+        listaPresenter.carregarPersonagem();
     }
 
-    public void preencherLista (List<Personagem> personagem) {
+    @Override
+    public void PreencherListaPersonagens (List<Personagem> personagem) {
         personagemAdapter.clear();
         personagemAdapter.addAll(personagem);
     }
+
 }
