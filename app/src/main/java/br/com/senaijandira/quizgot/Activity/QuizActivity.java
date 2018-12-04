@@ -13,7 +13,23 @@ public class QuizActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-
-
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

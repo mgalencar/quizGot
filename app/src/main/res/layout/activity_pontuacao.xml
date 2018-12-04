@@ -35,15 +35,18 @@
             android:layout_height="wrap_content"
             android:text="perguntas:"
             android:layout_marginRight="5dp"
-            />
+            android:textSize="15dp"/>
+
+
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="vai receber a quantidade de perguntas"
+            android:textSize="15dp"/>
 
-        />
+
     </LinearLayout>
 
     <LinearLayout
@@ -58,13 +61,15 @@
             android:layout_height="wrap_content"
             android:text="respostas:"
             android:layout_marginRight="5dp"
-            />
+            android:textSize="15dp"/>
+
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="vai receber a quantidade de respostas"/>
+            android:text="vai receber a quantidade de respostas"
+            android:textSize="15dp"/>
 
 
     </LinearLayout>
@@ -75,13 +80,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="210dp"
-        >
+        android:layout_marginTop="210dp">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sair"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:onClick="btnSair"
+            android:background="@drawable/btnradius"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            />
+
     </LinearLayout>
 
 
@@ -91,13 +102,17 @@
         android:layout_gravity="center"
         android:orientation="horizontal">
 
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="jogar novamente"
-            android:layout_marginTop="20dp" />
-   </LinearLayout>
+            android:layout_marginTop="20dp"
+            android:onClick="btnJogarNovamente"
+            android:background="@drawable/btnradius"
+            android:textColor="@color/white"
+            android:padding="10dp"/>
+
+    </LinearLayout>
 
     </LinearLayout>
 
@@ -127,4 +142,3 @@
 
 
 
-</LinearLayout>
