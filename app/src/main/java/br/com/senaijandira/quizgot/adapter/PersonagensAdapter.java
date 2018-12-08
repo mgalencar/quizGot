@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import br.com.senaijandira.quizgot.R;
 import br.com.senaijandira.quizgot.model.Personagem;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PersonagensAdapter extends ArrayAdapter<Personagem> {
 
@@ -32,6 +33,9 @@ public class PersonagensAdapter extends ArrayAdapter<Personagem> {
 
         Personagem personagem = getItem(position);
         TextView txtNomePersonagem = v.findViewById(R.id.txtNomePersonagem);
+        CircleImageView imagemPersonagem = v.findViewById(R.id.fotoPersonagem);
+
+
         txtNomePersonagem.setText(personagem.getNome_personagem());
 
         return v;

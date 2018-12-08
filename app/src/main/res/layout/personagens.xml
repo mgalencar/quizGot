@@ -19,6 +19,7 @@
             android:src="@drawable/snow"
             android:layout_marginLeft="10dp"
             android:id="@+id/fotoPersonagem"
+
             />
         <LinearLayout
             android:layout_width="wrap_content"

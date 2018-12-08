@@ -8,13 +8,15 @@ public class Personagem {
     private String titulo;
     private String casa;
     private String reino;
+    private String pergunta;
+    private String foto;
 
 
-    public int getId_personagens() {
+    public int getId_personagem() {
         return id_personagem;
     }
 
-    public void setId_personagens(int id_personagens) {
+    public void setId_personagem(int id_personagens) {
         this.id_personagem = id_personagens;
     }
 
@@ -55,5 +57,21 @@ public class Personagem {
 
     public void setReino(String reino) {
         this.reino = reino;
+    }
+
+    public String getPergunta() {
+        return pergunta;
+    }
+
+    public void setPergunta(String pergunta) {
+        this.pergunta = pergunta;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }

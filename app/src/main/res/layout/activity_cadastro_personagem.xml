@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black"
+
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,21 +23,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CADASTRAR PERSONAGEM"
-            android:textColor="@color/black"
+            android:id="@+id/tituloCadastrar"
+            android:textColor="@color/white"
             android:layout_marginTop="20dp"
+            android:textSize="15dp"
         />
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
             android:id="@+id/addImg_personagem"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:src="@android:drawable/ic_menu_camera"
+
+            />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Adicionar uma foto do personagem"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:layout_marginTop="10dp"/>
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"/>
 
     </LinearLayout>
 
@@ -46,72 +57,89 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            >
 
             <EditText
                 android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/nome_personagem"
-                android:hint="txt_personagem"
+                android:layout_height="35dp"
+                android:id="@+id/txt_nome_personagem"
+                android:hint="Personagem"
+                android:background="@drawable/edittext"
+                android:shadowColor="@color/colorAccent"
+                android:shadowDx="1.8"
+                android:shadowDy="1.8"
+                android:shadowRadius="1.5"
                 />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_marginTop="10dp"
+            >
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:hint="Titulo"
+                android:id="@+id/txt_titulo"
+                android:background="@drawable/edittext"/>
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            >
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:hint="Casa"
+                android:id="@+id/txt_casa"
+                android:background="@drawable/edittext"/>
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            >
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="35dp"
+                android:hint="Reino"
+                android:id="@+id/txt_reino"
+                android:background="@drawable/edittext"
+
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            >
 
             <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/cb_genero">
-
-                <!--FAZER COMBO -->
-
-
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:id="@+id/cb_genero"
+                android:background="@drawable/edittext"
+                >
             </Spinner>
 
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="titulo"
-                android:id="@+id/txt_titulo"/>
-
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <EditText
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="casa"
-                android:id="@+id/txt_casa"/>
-
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <EditText
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:hint="reino"
-                android:id="@+id/txt_reino"
-                />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -128,8 +156,10 @@
             android:layout_height="wrap_content"
             android:text="Salvar Personagem"
             android:layout_marginTop="35dp"
+            android:padding="10dp"
+            android:onClick="salvarCadastroPersonagem"
             android:textColor="@color/white"
-            android:background="@color/black"/>
+            android:background="@drawable/btnradius"/>
 
 
     </LinearLayout>
