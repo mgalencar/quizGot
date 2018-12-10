@@ -6,11 +6,12 @@ Ola, tudo bem?
 
 Esse projeto foi desenvolvido para avaliação na disciplina de Mobile. Abaixo estão algumas instruções:
 
-1 - Há uma pasta com o dump do banco de dados e o mesmo deverá ser executado após a criação do database. 
-2 - A API deverá ser "rodada" no servidor do XAMPP.
-3 - O app lista alguns personagens cadastrados e várias informações sobre eles, como: a descrição, a casa que pertence, o reino de origem, etc.
-4 - É possível listar também as casas e sobre elas é possível ver o lema, a foto do brasão, uma breve história, a quantidade de membros e o nome da sede. 
-5- A pasta API quiz precisa ficar no seguinte caminho: xampp/htdocs/**pasta de foto **
+1 - Há uma pasta com o dump do banco de dados e o mesmo deverá ser executado após a criação do database.<br>
+2 - A API deverá ser "rodada" no servidor do XAMPP.<br>
+3 - O app lista alguns personagens cadastrados e várias informações sobre eles, como: a descrição, a casa que pertence, o reino de origem, etc.<br>
+4 - É possível listar também as casas e sobre elas é possível ver o lema, a foto do brasão, uma breve história, a quantidade de membros e o nome da sede.<br> 
+5- A pasta APIquiz precisa ficar no seguinte caminho: xampp/htdocs/<br>
+"A pasta APIquiz deve ficar neste caminho para que as imagens sejam carregadas"
 
 Abaixo o resultado de como ficaram as telas:
 
