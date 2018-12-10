@@ -9,11 +9,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
 import br.com.senaijandira.quizgot.Activity.CadastroPersonagensActivity;
+import br.com.senaijandira.quizgot.Activity.VisualizarPersonagem;
 import br.com.senaijandira.quizgot.R;
 import br.com.senaijandira.quizgot.adapter.PersonagensAdapter;
 import br.com.senaijandira.quizgot.model.Personagem;
@@ -22,7 +25,7 @@ import br.com.senaijandira.quizgot.service.ServiceFactory;
 import br.com.senaijandira.quizgot.view.ListaView;
 
 
-public class FragmentsPersonagens extends Fragment implements ListaView{
+public class FragmentsPersonagens extends Fragment implements ListaView, AdapterView.OnItemClickListener{
 
     PersonagensAdapter personagemAdapter;
 
@@ -50,6 +53,8 @@ public class FragmentsPersonagens extends Fragment implements ListaView{
         personagemAdapter = new PersonagensAdapter(getContext());
 
         lstpersonagens.setAdapter(personagemAdapter);
+
+        lstpersonagens.setOnItemClickListener(this);
 
         cadastrarPersonagem = v.findViewById(R.id.cadastrarPersonagem);
         cadastrarPersonagem.setOnClickListener(btnCadastrarPersonagem);
@@ -81,4 +86,14 @@ public class FragmentsPersonagens extends Fragment implements ListaView{
         personagemAdapter.addAll(personagem);
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(getContext(),"dsada",Toast.LENGTH_LONG);
+        Personagem personagem = personagemAdapter.getItem(position);
+
+        Intent intent = new Intent(getContext(), VisualizarPersonagem.class);
+        intent.putExtra("id_personagem", personagem.getId_personagens());
+
+        startActivity(intent);
+    }
 }

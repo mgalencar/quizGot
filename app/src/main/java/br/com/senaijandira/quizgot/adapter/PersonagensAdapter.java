@@ -7,7 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -33,10 +37,23 @@ public class PersonagensAdapter extends ArrayAdapter<Personagem> {
 
         Personagem personagem = getItem(position);
         TextView txtNomePersonagem = v.findViewById(R.id.txtNomePersonagem);
+        TextView txtGenero = v.findViewById(R.id.txtGenero);
+        TextView txtReino = v.findViewById(R.id.txtReino);
+        TextView txtCasa = v.findViewById(R.id.txtCasa);
+        TextView txtHistoria = v.findViewById(R.id.txtHistoria);
+
+        //Tratamento de imagens
         CircleImageView imagemPersonagem = v.findViewById(R.id.fotoPersonagem);
+        String url_foto = getContext().getString(R.string.URL_IMAGEM)+personagem.getFoto_personagem();
+        Picasso.get().load(url_foto).into(imagemPersonagem);
+        //Fim tratamento de imagem
 
 
         txtNomePersonagem.setText(personagem.getNome_personagem());
+        txtGenero.setText(personagem.getGenero());
+        txtCasa.setText(personagem.getCasa());
+        txtReino.setText(personagem.getReino());
+        txtHistoria.setText(personagem.getDescricao());
 
         return v;
     }

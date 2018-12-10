@@ -2,22 +2,23 @@ package br.com.senaijandira.quizgot.model;
 
 public class Personagem {
 
-    private int id_personagem;
+    private int id_personagens;
     private String nome_personagem;
     private String genero;
-    private String titulo;
     private String casa;
     private String reino;
-    private String pergunta;
-    private String foto;
+    private String foto_personagem;
+    private String descricao;
+   //private String pergunta;
 
 
-    public int getId_personagem() {
-        return id_personagem;
+
+    public int getId_personagens() {
+        return id_personagens;
     }
 
-    public void setId_personagem(int id_personagens) {
-        this.id_personagem = id_personagens;
+    public void setId_personagens(int id_personagens) {
+        this.id_personagens = id_personagens;
     }
 
     public String getNome_personagem() {
@@ -33,14 +34,6 @@ public class Personagem {
 
     public void setGenero(String genero) {
         this.genero = genero;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 
     public String getCasa() {
@@ -59,19 +52,27 @@ public class Personagem {
         this.reino = reino;
     }
 
-    public String getPergunta() {
-        return pergunta;
+//    public String getPergunta() {
+//        return pergunta;
+//    }
+//
+//    public void setPergunta(String pergunta) {
+//        this.pergunta = pergunta;
+//    }
+
+    public String getFoto_personagem() {
+        return foto_personagem;
     }
 
-    public void setPergunta(String pergunta) {
-        this.pergunta = pergunta;
+    public void setFoto_personagem(String foto_personagem) {
+        this.foto_personagem = foto_personagem;
     }
 
-    public String getFoto() {
-        return foto;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

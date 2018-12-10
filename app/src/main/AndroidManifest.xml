@@ -25,6 +25,7 @@
         <activity android:name=".Activity.QuizActivity"></activity>
         <activity android:name=".Activity.CadastroPersonagensActivity"></activity>
         <activity android:name=".Activity.ListaActivity"></activity>
+        <activity android:name=".Activity.VisualizarPersonagem"></activity>
 
     </application>
 

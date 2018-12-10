@@ -10,22 +10,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="25dp"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Insira suas perguntas e resposta aqui"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Wiki Game Of Thrones"
             android:textColor="@color/white"
-            android:textSize="15dp"
-            android:onClick="txtLista"/>
+            android:textSize="20dp"
+            android:gravity="center"
+            android:id="@+id/txtTitulo"
+            />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical"
         android:layout_gravity="center"
         >
@@ -49,17 +54,29 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center|bottom"
         android:orientation="vertical">
-
         <Button
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
+
+            android:text="Lista de Personagens e casas"
+            android:textColor="@color/black"
+            android:background="@drawable/btnradius"
+            android:onClick="txtLista"
+
+            />
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:enabled="true"
             android:text="Iniciar Jogo"
             android:textColor="@color/black"
             android:background="@drawable/btnradius"
             android:onClick="btnInicio"
-
+            android:layout_marginTop="30dp"
            />
+
 
 
     </LinearLayout>

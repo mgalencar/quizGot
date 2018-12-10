@@ -3,6 +3,9 @@ package br.com.senaijandira.quizgot.Activity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,9 +15,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 import br.com.senaijandira.quizgot.R;
 import br.com.senaijandira.quizgot.model.Personagem;
@@ -27,8 +33,11 @@ public class CadastroPersonagensActivity extends Activity implements CadastroPer
 
     EditText txtNome,txtTitulo, txtCasa, txtReino;
     Spinner genero;
+    Bitmap fotoPersonagem;
+    ImageView imgFotoPersonagem;
     PersonagemService service = ServiceFactory.create();
 
+    private final int COD_REQ_GALERIA = 101;
     //Chamando a class presenter para executar o cadastro
     CadastrarPersonagemPresenter presenter;
 
@@ -37,10 +46,14 @@ public class CadastroPersonagensActivity extends Activity implements CadastroPer
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_cadastro_personagem);
+
         //Mudando o estilo da fonte
         TextView tituloCadastro = findViewById(R.id.tituloCadastrar);
+        TextView fraseAdicionarPersonagem = findViewById(R.id.fraseAdicionarPersonagem);
         Typeface fonte = Typeface.createFromAsset(getAssets(),"Game of Thrones.ttf");
+
         tituloCadastro.setTypeface(fonte);
+        fraseAdicionarPersonagem.setTypeface(fonte);
 
         //Fazendo spinner
         genero = (Spinner) findViewById(R.id.cb_genero);
@@ -57,6 +70,7 @@ public class CadastroPersonagensActivity extends Activity implements CadastroPer
         txtTitulo = findViewById(R.id.txt_titulo);
         txtReino = findViewById(R.id.txt_reino);
         txtCasa = findViewById(R.id.txt_casa);
+        imgFotoPersonagem = findViewById(R.id.fotoPersonagem);
 
         presenter = new CadastrarPersonagemPresenter((CadastroPersonagensView) this, service);
 
@@ -69,8 +83,10 @@ public class CadastroPersonagensActivity extends Activity implements CadastroPer
         String titulo = txtTitulo.getText().toString();
         String casa = txtCasa.getText().toString();
         String reino = txtReino.getText().toString();
+
         //Pegando item selecionado no combo box
         String itemSelectSpinner = genero.getSelectedItem().toString();
+
 
         if(nome.equals("") || titulo.equals("") || casa.equals("") || reino.equals("")){
             alertGeral("Preencha todos os campos","Todos os campos são obrigatórios");
@@ -79,7 +95,6 @@ public class CadastroPersonagensActivity extends Activity implements CadastroPer
             Personagem personagem = new Personagem();
 
             personagem.setNome_personagem(nome);
-            personagem.setTitulo(titulo);
             personagem.setCasa(casa);
             personagem.setReino(reino);
             personagem.setGenero(itemSelectSpinner);
@@ -116,6 +131,28 @@ public class CadastroPersonagensActivity extends Activity implements CadastroPer
         alert.setTitle(titulo);
         alert.show();
     }
+    //método para abrir a galeria do android e carregar uma imagem
+    public void abrirGaleria(View view){
 
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        //Selecionar pelo nome imagem
+        intent.setType("image/*");
+        startActivityForResult(Intent.createChooser(intent,"Selecione uma imagem"), COD_REQ_GALERIA);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == COD_REQ_GALERIA && resultCode == Activity.RESULT_OK){
+            try{
+                InputStream input = getContentResolver().openInputStream(data.getData());
+                fotoPersonagem = BitmapFactory.decodeStream(input);
+                imgFotoPersonagem.setImageBitmap(fotoPersonagem);
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

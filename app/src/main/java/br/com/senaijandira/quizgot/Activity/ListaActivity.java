@@ -1,16 +1,20 @@
 package br.com.senaijandira.quizgot.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import br.com.senaijandira.quizgot.Fragments.FragmentsCasas;
 import br.com.senaijandira.quizgot.Fragments.FragmentsPersonagens;
 import br.com.senaijandira.quizgot.R;
 import br.com.senaijandira.quizgot.adapter.PersonagensAdapter;
+import br.com.senaijandira.quizgot.model.Personagem;
 
 public class ListaActivity extends AppCompatActivity {
 
@@ -57,5 +61,6 @@ public class ListaActivity extends AppCompatActivity {
         ft.replace(R.id.frame_layout, new FragmentsCasas());
         ft.commit();
     }
+
 
 }

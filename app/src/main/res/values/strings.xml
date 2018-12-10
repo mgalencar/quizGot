@@ -5,6 +5,8 @@
         <item>Feminino</item>
         <item>Masculino</item>
     </string-array>
-    <string name="URL_IMAGEM">http://10.0.0.2/ServidorQuiz/imagens</string>
+    <string name="URL_IMAGEM">http://192.168.0.107/apiquiz/ServidorQuiz/imagens/</string>
+
+
 
 </resources>
