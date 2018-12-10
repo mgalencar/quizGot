@@ -1,4 +1,4 @@
-# quizGot
+# WikiGot
 
 Como utilizar o Wiki Game of Thrones - Personagens e Casas 
 
