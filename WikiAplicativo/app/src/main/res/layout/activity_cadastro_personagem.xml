@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080808"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CADASTRAR PERSONAGEM"
+            android:id="@+id/tituloCadastrar"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+        />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/fotoPersonagem"
+            android:layout_marginTop="10dp"
+            android:src="@android:drawable/ic_menu_camera"
+            android:onClick="abrirGaleria"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adicionar uma foto do personagem"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:id="@+id/fraseAdicionarPersonagem"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:gravity="center">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext"
+            >
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txt_nome_personagem"
+                android:hint="Personagem"
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext"
+
+            >
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:hint="Descrição"
+                android:id="@+id/txt_descricao"
+               />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext"
+            >
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:hint="Casa"
+                android:id="@+id/txt_casa"
+               />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext"
+            >
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:hint="Reino"
+                android:id="@+id/txt_reino"
+
+
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext"
+            >
+
+            <Spinner
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:id="@+id/cb_genero"
+                >
+            </Spinner>
+
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salvar Personagem"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:onClick="salvarCadastroPersonagem"
+            android:textColor="@color/white"
+            android:background="@drawable/btnradius"/>
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
