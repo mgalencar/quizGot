@@ -14,20 +14,20 @@ Esse projeto foi desenvolvido para avaliação na disciplina de Mobile. Abaixo e
 
 Abaixo o resultado de como ficaram as telas:
 
-Tela de inicio - Home
+Tela de inicio - Home  <br>
 ![image](https://user-images.githubusercontent.com/32152265/49734487-98cbe680-fc6b-11e8-91a3-8fc6134aaddb.png)
 
-Lista de Personagens 
+Lista de Personagens  <br>
 ![image](https://user-images.githubusercontent.com/32152265/49734811-a635a080-fc6c-11e8-9e9c-dbf98792bbdb.png)
 
-Tela com a descrição do personagem
+Tela com a descrição do personagem  <br>
 ![image](https://user-images.githubusercontent.com/32152265/49734832-b3eb2600-fc6c-11e8-835f-41e6374aeca7.png)
 
-Lista Casas
+Lista Casas  <br>
 ![image](https://user-images.githubusercontent.com/32152265/49734875-cf563100-fc6c-11e8-93ac-15ee795b2a87.png)
 
-Tela com a descrição da casa
+Tela com a descrição da casa <br>
 ![image](https://user-images.githubusercontent.com/32152265/49735166-9c606d00-fc6d-11e8-9234-475fd76e2ced.png)
 
-Tela de cadastro 
+Tela de cadastro <br>
 ![image](https://user-images.githubusercontent.com/32152265/49734619-fceeaa80-fc6b-11e8-9e21-4f14ab4d1c68.png)
